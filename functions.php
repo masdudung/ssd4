@@ -14,7 +14,7 @@ class masdudung_theme_function{
         add_action( 'widgets_init', [$this, 'arphabet_widgets_init'] );
 
         # register menu to wordpress theme 
-        add_action( 'init', [$this, 'wpb_custom_new_menu']);
+        add_action( 'init', [$this, 'wp_custom_new_menu']);
 
         # hook the title
         add_filter( 'wp_title', [$this, 'filter_wp_title'] );
@@ -70,12 +70,12 @@ class masdudung_theme_function{
 
     }
 
-    function wpb_custom_new_menu() {
-        register_nav_menu(
-            'main-menu',__( 'Main Menu' )
-        );
-        register_nav_menu(
-            'footer-menu',__( 'Footer Menu' )
+    function wp_custom_new_menu() {
+        register_nav_menus(
+            array(
+                'main-menu' => __( 'Main Menu' ),
+                'footer-menu' => __( 'Footer Menu' )
+            )
         );
     }
 

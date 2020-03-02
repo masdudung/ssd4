@@ -7,7 +7,7 @@
         footer  
         <?php
         wp_nav_menu( array( 
-            'menu' => 'footer-menu', 
+            'theme_location' => 'footer-menu', 
             'container_class' => 'footer-menu' ) 
         ); 
         ?>

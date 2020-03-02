@@ -17,7 +17,7 @@
         <nav class="blog-nav">
             <?php
             wp_nav_menu( array( 
-                'menu' => 'main-menu', 
+                'theme_location' => 'main-menu', 
                 'container_class' => 'main-menu' ) 
             ); 
             ?>
