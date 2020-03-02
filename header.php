@@ -11,9 +11,25 @@
 </head>
  
 <body <?php body_class(); ?>>
+
+<div class="blog-masthead">
+    <div class="container">
+        <nav class="blog-nav">
+            <?php
+            wp_nav_menu( array( 
+                'menu' => 'main-menu', 
+                'container_class' => 'main-menu' ) 
+            ); 
+            ?>
+        </nav>
+    </div>
+</div>
+
 <div class="container">
- 
-<header class="site-header">
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-    <h4><?php bloginfo( 'description' ); ?></h4>
+
+<header class="site-header blog-header">
+    <h1 class="blog-title"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+    <p class="lead blog-description"><?php bloginfo( 'description' ); ?></p>
 </header>
+
+<div class="row">

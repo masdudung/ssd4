@@ -1,5 +1,17 @@
+</div><!-- closes <div class=row"> -->
+    
 <footer class="site-footer">
-    <p><?php bloginfo( 'name' ) ?></p>
+    <hr>
+    <p>
+        <?php bloginfo( 'name' ) ?>
+        footer  
+        <?php
+        wp_nav_menu( array( 
+            'menu' => 'footer-menu', 
+            'container_class' => 'footer-menu' ) 
+        ); 
+        ?>
+    </p>
 </footer>
 </div> <!-- closes <div class=container"> -->
 
