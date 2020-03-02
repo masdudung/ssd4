@@ -1,11 +1,12 @@
 <?php
 
-
 get_header();
 
 
 get_template_part( 'include/sidebar', 'left' );
-get_template_part( 'include/single', 'team_member' );
+echo '<div class="col-sm-8 blog-main">';
+echo 'not found';
+echo '</div>';
 get_template_part( 'include/sidebar', 'right' );
 
 

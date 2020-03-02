@@ -15,6 +15,10 @@ class masdudung_theme_function{
 
         # register menu to wordpress theme 
         add_action( 'init', [$this, 'wpb_custom_new_menu']);
+
+        # hook the title
+        add_filter( 'wp_title', [$this, 'filter_wp_title'] );
+
     }
 
     public function theme_name_scripts() {
@@ -28,10 +32,8 @@ class masdudung_theme_function{
         );
 
         # include Bootstrap JS
-        wp_enqueue_script ( 
-            'jquery-js', 
-            get_template_directory_uri() . '/js/jquery.min.js' 
-        );
+        wp_enqueue_script ( 'jquery' );
+        
         wp_enqueue_script ( 
             'bootstrap-js', 
             get_template_directory_uri() . '/js/bootstrap.min.js' 
@@ -75,6 +77,17 @@ class masdudung_theme_function{
         register_nav_menu(
             'footer-menu',__( 'Footer Menu' )
         );
+    }
+
+    public function filter_wp_title($title)
+    {
+        # code...
+        global $paged, $page;
+        if ( is_feed() )
+            return $title;
+
+        $title = get_bloginfo( 'name' ) . " $title";
+        return $title;
     }
 
 }
